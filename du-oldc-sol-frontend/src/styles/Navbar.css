@@ -1,0 +1,197 @@
+/* ===========================
+   Navbar
+=========================== */
+
+.navbar{
+
+height:90px;
+
+background:#08296d;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+padding:0 40px;
+
+color:white;
+
+box-shadow:0 2px 12px rgba(0,0,0,.12);
+
+transition:.3s;
+
+}
+
+/* ===========================
+   Left Section
+=========================== */
+
+.navbar-left{
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+}
+
+.logo{
+
+width:58px;
+
+height:58px;
+
+object-fit:contain;
+
+}
+
+.navbar-left h2{
+
+font-size:32px;
+
+font-weight:700;
+
+margin:0;
+
+}
+
+.navbar-left p{
+
+font-size:13px;
+
+opacity:.85;
+
+margin-top:2px;
+
+}
+
+/* ===========================
+   Right Navigation
+=========================== */
+
+.navbar-links{
+
+display:flex;
+
+align-items:center;
+
+gap:16px;
+
+}
+
+.navbar-links button{
+
+display:flex;
+
+align-items:center;
+
+gap:8px;
+
+padding:10px 16px;
+
+background:transparent;
+
+border:none;
+
+border-radius:10px;
+
+color:white;
+
+font-size:15px;
+
+font-weight:500;
+
+cursor:pointer;
+
+transition:.25s;
+
+}
+
+.navbar-links button:hover{
+
+background:rgba(255,255,255,.12);
+
+color:#FFD54A;
+
+}
+
+/* ===========================
+   Dark Theme
+=========================== */
+
+body.dark-theme .navbar{
+
+background:#111827;
+
+box-shadow:0 2px 10px rgba(0,0,0,.4);
+
+}
+
+body.dark-theme .navbar-links button{
+
+color:#f3f4f6;
+
+}
+
+body.dark-theme .navbar-links button:hover{
+
+background:#374151;
+
+color:#60A5FA;
+
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media(max-width:1200px){
+
+.navbar{
+
+padding:0 20px;
+
+}
+
+.navbar-links{
+
+gap:10px;
+
+}
+
+.navbar-links button{
+
+padding:8px 12px;
+
+font-size:14px;
+
+}
+
+}
+
+@media(max-width:900px){
+
+.navbar{
+
+flex-direction:column;
+
+height:auto;
+
+padding:15px;
+
+gap:15px;
+
+}
+
+.navbar-links{
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+}
+
+}

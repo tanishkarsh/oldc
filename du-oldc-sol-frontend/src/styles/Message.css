@@ -1,0 +1,58 @@
+/* ==========================================
+   Legacy Message Component
+========================================== */
+
+.chat-message {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 28px;
+    align-items: flex-start;
+}
+
+.chat-message.bot {
+    justify-content: flex-start;
+}
+
+.chat-message.user {
+    justify-content: flex-end;
+}
+
+.chat-message-avatar {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,.08);
+}
+
+.chat-message-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.chat-message-content {
+    max-width: 72%;
+}
+
+.chat-message-bubble {
+    background: white;
+    padding: 18px 22px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,.08);
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.chat-message.user .chat-message-bubble {
+    background: #14398f;
+    color: white;
+}
+
+.chat-message-time {
+    font-size: 13px;
+    color: #999;
+    margin-top: 8px;
+}
