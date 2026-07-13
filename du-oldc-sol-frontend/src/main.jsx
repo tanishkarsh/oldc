@@ -4,6 +4,7 @@ import App from "./App";
 
 // Global CSS
 import "./index.css";
+import "./styles/Responsive.css";
 
 // Custom Styles
 import "./styles/app.css";

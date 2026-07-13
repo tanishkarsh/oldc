@@ -5,6 +5,7 @@ import logo from "../assets/logo.png";
 import Modal from "./Modal";
 
 import {
+    Menu,
     Home,
     Building2,
     Bot,
@@ -14,7 +15,12 @@ import {
     Sun
 } from "lucide-react";
 
-export default function Navbar() {
+export default function Navbar({
+
+    sidebarOpen,
+    setSidebarOpen
+
+}) {
 
     const [darkMode, setDarkMode] = useState(false);
 
@@ -84,6 +90,15 @@ export default function Navbar() {
 
                 <div className="navbar-left">
 
+                    <button
+                        className="menu-btn"
+                        onClick={() => setSidebarOpen(true)}
+                    >
+
+                        <Menu size={24} />
+
+                    </button>
+
                     <img
                         src={logo}
                         alt="logo"
@@ -95,7 +110,9 @@ export default function Navbar() {
                         <h2>DU SOL</h2>
 
                         <p>
+
                             School of Open Learning
+
                         </p>
 
                     </div>
@@ -118,30 +135,21 @@ export default function Navbar() {
                                 "About DU SOL",
                                 <>
                                     <p>
-
                                         School of Open Learning (SOL),
-                                        University of Delhi, is one of
-                                        India's leading institutions
-                                        providing quality education
-                                        through Open and Distance Learning.
-
+                                        University of Delhi,
+                                        is one of India's leading
+                                        institutions providing quality
+                                        education through Open and
+                                        Distance Learning.
                                     </p>
 
-                                    <p>
-
-                                        <strong>Official Website</strong>
-
-                                        <br/>
-
-                                        <a
-                                            href="https://sol.du.ac.in"
-                                            target="_blank"
-                                            rel="noreferrer"
-                                        >
-                                            https://sol.du.ac.in
-                                        </a>
-
-                                    </p>
+                                    <a
+                                        href="https://sol.du.ac.in"
+                                        target="_blank"
+                                        rel="noreferrer"
+                                    >
+                                        https://sol.du.ac.in
+                                    </a>
 
                                 </>
                             )
@@ -159,31 +167,12 @@ export default function Navbar() {
                             openModal(
                                 "About AI Assistant",
                                 <>
-
                                     <p>
 
-                                        This chatbot has been developed
-                                        to assist DU SOL students using
-                                        Retrieval-Augmented Generation (RAG).
+                                        This chatbot uses RAG with
+                                        Groq and Qdrant Cloud.
 
                                     </p>
-
-                                    <ul>
-
-                                        <li>Groq API</li>
-
-                                        <li>Qdrant Cloud Vector Database</li>
-
-                                        <li>Sentence Transformers</li>
-
-                                        <li>Official DU SOL PDFs</li>
-
-                                        <li>Voice Input</li>
-
-                                        <li>Voice Output</li>
-
-                                    </ul>
-
                                 </>
                             )
                         }
@@ -200,26 +189,12 @@ export default function Navbar() {
                             openModal(
                                 "Data Sources",
                                 <>
-
                                     <p>
 
-                                        The chatbot retrieves information
-                                        from official DU SOL documents.
+                                        Information is retrieved
+                                        from official DU SOL PDFs.
 
                                     </p>
-
-                                    <ul>
-
-                                        <li>UG Prospectus 2025-26.pdf</li>
-
-                                        <li>PG Prospectus 2025-26.pdf</li>
-
-                                        <li>Admissions.pdf</li>
-
-                                        <li>General FAQs.pdf</li>
-
-                                    </ul>
-
                                 </>
                             )
                         }
@@ -236,55 +211,8 @@ export default function Navbar() {
                             openModal(
                                 "Contact",
                                 <>
-
-                                    <p>
-
-                                        <strong>Website</strong>
-
-                                        <br/>
-
-                                        <a
-                                            href="https://sol.du.ac.in"
-                                            target="_blank"
-                                            rel="noreferrer"
-                                        >
-                                            https://sol.du.ac.in
-                                        </a>
-
-                                    </p>
-
-                                    <p>
-
-                                        <strong>Email</strong>
-
-                                        <br/>
-
-                                        info@sol.du.ac.in
-
-                                    </p>
-
-                                    <p>
-
-                                        <strong>Phone</strong>
-
-                                        <br/>
-
-                                        011-27008300
-
-                                    </p>
-
-                                    <p>
-
-                                        <strong>Address</strong>
-
-                                        <br/>
-
-                                        School of Open Learning,
-                                        University of Delhi,
-                                        Delhi – 110007
-
-                                    </p>
-
+                                    <p>info@sol.du.ac.in</p>
+                                    <p>011-27008300</p>
                                 </>
                             )
                         }
@@ -302,23 +230,23 @@ export default function Navbar() {
 
                             darkMode ?
 
-                                <>
+                            <>
 
-                                    <Sun size={18}/>
+                                <Sun size={18}/>
 
-                                    Light
+                                Light
 
-                                </>
+                            </>
 
                             :
 
-                                <>
+                            <>
 
-                                    <Moon size={18}/>
+                                <Moon size={18}/>
 
-                                    Dark
+                                Dark
 
-                                </>
+                            </>
 
                         }
 

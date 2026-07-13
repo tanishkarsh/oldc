@@ -9,9 +9,16 @@ import {
   IndianRupee,
   FileText,
   Bell,
+  X,
 } from "lucide-react";
 
-export default function LeftPanel({ onQuestionSelect }) {
+export default function LeftPanel({
+
+  sidebarOpen,
+  setSidebarOpen,
+  onQuestionSelect,
+
+}) {
 
   const cards = [
     {
@@ -47,23 +54,44 @@ export default function LeftPanel({ onQuestionSelect }) {
     {
       icon: <Bell size={24} />,
       title: "Notices",
-      text: "Show me the latest DU SOL notices.",
+      text: "Latest announcements and circulars.",
+      question: "Show me the latest DU SOL notices.",
     },
   ];
 
   return (
-    <div className="left-panel">
+
+    <div className={`left-panel ${sidebarOpen ? "open" : ""}`}>
+
+      {/* Close button (Mobile Only) */}
+
+      <button
+        className="close-btn"
+        onClick={() => setSidebarOpen(false)}
+      >
+
+        <X size={24} />
+
+      </button>
 
       <h1>
+
         Welcome to
+
         <br />
+
         <span>DU SOL Assistant</span>
+
       </h1>
 
       <p className="subtitle">
+
         Your AI companion for all information related to
+
         <br />
+
         DU School of Open Learning.
+
       </p>
 
       <div className="feature-list">
@@ -73,7 +101,17 @@ export default function LeftPanel({ onQuestionSelect }) {
           <div
             key={index}
             className="feature-card"
-            onClick={() => onQuestionSelect(item.question)}
+            onClick={() => {
+
+              if (item.question) {
+
+                onQuestionSelect(item.question);
+
+              }
+
+              setSidebarOpen(false);
+
+            }}
             style={{ cursor: "pointer" }}
           >
 
@@ -109,7 +147,7 @@ export default function LeftPanel({ onQuestionSelect }) {
 
           <p>🌐 www.sol.du.ac.in</p>
 
-          <p>📞 2700 1102 02</p>
+          <p>📞 011-27008300</p>
 
           <p>✉️ info@sol.du.ac.in</p>
 
@@ -118,5 +156,7 @@ export default function LeftPanel({ onQuestionSelect }) {
       </div>
 
     </div>
+
   );
+
 }

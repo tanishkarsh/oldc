@@ -1,7 +1,6 @@
 .left-panel{
 
     width:380px;
-
     height:calc(100vh - 145px);
 
     background:#ffffff;
@@ -11,12 +10,38 @@
     padding:28px 22px;
 
     display:flex;
-
     flex-direction:column;
 
     box-shadow:0 14px 35px rgba(15,40,90,.08);
 
     overflow:hidden;
+
+    transition:.35s ease;
+
+}
+
+/* ==========================
+   Close Button
+========================== */
+
+.close-btn{
+
+    display:none;
+
+    position:absolute;
+
+    top:18px;
+
+    right:18px;
+
+    background:none;
+
+    border:none;
+
+    cursor:pointer;
+
+    color:#173f8a;
+
 }
 
 /* ==========================
@@ -34,11 +59,13 @@
     line-height:1.15;
 
     margin-bottom:14px;
+
 }
 
 .left-panel h1 span{
 
     display:block;
+
 }
 
 /* ==========================
@@ -56,6 +83,7 @@
     margin-bottom:20px;
 
     flex-shrink:0;
+
 }
 
 /* ==========================
@@ -75,11 +103,13 @@
     gap:12px;
 
     padding-right:4px;
+
 }
 
 .feature-list::-webkit-scrollbar{
 
     width:6px;
+
 }
 
 .feature-list::-webkit-scrollbar-thumb{
@@ -87,11 +117,7 @@
     background:#d7dceb;
 
     border-radius:20px;
-}
 
-.feature-list::-webkit-scrollbar-track{
-
-    background:transparent;
 }
 
 /* ==========================
@@ -119,6 +145,7 @@
     transition:.25s;
 
     box-shadow:0 4px 12px rgba(0,0,0,.03);
+
 }
 
 .feature-card:hover{
@@ -128,6 +155,7 @@
     border-color:#173f8a;
 
     box-shadow:0 12px 24px rgba(23,63,138,.12);
+
 }
 
 .feature-icon{
@@ -149,6 +177,7 @@
     align-items:center;
 
     flex-shrink:0;
+
 }
 
 .feature-card h3{
@@ -160,6 +189,7 @@
     font-weight:700;
 
     margin-bottom:4px;
+
 }
 
 .feature-card p{
@@ -169,10 +199,11 @@
     font-size:14px;
 
     line-height:1.45;
+
 }
 
 /* ==========================
-   Bottom Section
+   Bottom
 ========================== */
 
 .bottom-section{
@@ -190,19 +221,15 @@
     padding-top:16px;
 
     margin-top:16px;
+
 }
 
 .hero-image{
 
     width:92px;
 
-    height:auto;
-
-    display:block;
-
     object-fit:contain;
 
-    flex-shrink:0;
 }
 
 .contact{
@@ -212,6 +239,7 @@
     flex-direction:column;
 
     gap:8px;
+
 }
 
 .contact p{
@@ -222,35 +250,128 @@
 
     color:#5b6472;
 
-    display:flex;
-
-    align-items:center;
-
-    gap:8px;
 }
 
-.contact p:hover{
+/* ==========================
+   Dark Theme
+========================== */
 
-    color:#173f8a;
-}
-/* Dark Theme */
+body.dark-theme .left-panel{
 
-body.dark-theme .sidebar{
+    background:#111827;
 
-background:#111827;
-
-color:white;
+    color:white;
 
 }
 
-body.dark-theme .sidebar button{
+body.dark-theme .feature-card{
 
-color:white;
+    background:#1f2937;
+
+    border-color:#374151;
 
 }
 
-body.dark-theme .sidebar button:hover{
+body.dark-theme .feature-card h3{
 
-background:#1f2937;
+    color:white;
+
+}
+
+body.dark-theme .feature-card p{
+
+    color:#d1d5db;
+
+}
+
+body.dark-theme .subtitle{
+
+    color:#d1d5db;
+
+}
+
+body.dark-theme .contact p{
+
+    color:#d1d5db;
+
+}
+
+/* =====================================================
+   MOBILE (ChatGPT Style)
+===================================================== */
+
+@media(max-width:768px){
+
+    .left-panel{
+
+        position:fixed;
+
+        top:0;
+
+        left:-100%;
+
+        width:85%;
+
+        max-width:340px;
+
+        height:100vh;
+
+        border-radius:0;
+
+        z-index:1001;
+
+        overflow-y:auto;
+
+        padding:80px 20px 20px;
+
+    }
+
+    .left-panel.open{
+
+        left:0;
+
+    }
+
+    .close-btn{
+
+        display:block;
+
+    }
+
+    .hero-image{
+
+        width:70px;
+
+    }
+
+    .left-panel h1{
+
+        font-size:24px;
+
+    }
+
+    .subtitle{
+
+        font-size:14px;
+
+    }
+
+    .feature-card{
+
+        padding:14px;
+
+    }
+
+    .feature-card h3{
+
+        font-size:16px;
+
+    }
+
+    .feature-card p{
+
+        font-size:13px;
+
+    }
 
 }
