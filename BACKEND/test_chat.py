@@ -1,7 +1,7 @@
 import requests
 
 response = requests.post(
-    "http://127.0.0.1:5000/api/chat",
+    const API_URL = "https://oldc.onrender.com/api/chat";,
     json={
         "message": "What is the fee for B.Com?"
     }
